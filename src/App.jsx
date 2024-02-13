@@ -53,22 +53,38 @@ const Course = () => {
   )
 }
 
-const Total = () => {
+// const Total = () => {
 
-  let totalExercises = 0;
+//   let totalExercises = 0;
 
-  for (var i = 0; i < parts.length; i++){
+//   for (var i = 0; i < parts.length; i++){
     
-    totalExercises += parts[i].exercises;
+//     totalExercises += parts[i].exercises;
 
-  }
-  
+//   }
+//   return (
+//     <strong>
+//       total of {totalExercises} exercises
+//     </strong>
+//   )
+// }
+
+const Total = () => {
+  const totalParts = parts.reduce(function(sum, part) {
+    return sum + part.exercises
+  }, 0)
+
   return (
-    <strong>
-      total of {totalExercises} exercises
-    </strong>
-  )
+        <strong>
+          total of {totalParts} exercises
+        </strong>
+      )
 }
+
+
+
+
+
 
 const App = () => {
  
