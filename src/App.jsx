@@ -1,74 +1,66 @@
-const Header = (props) => {
-  console.log(props)
-  return (
-    <>
-      <p>
-        {props.course.name}
-      </p>
-    </>
-  )  
-}
 
-const Part = (props) => {
-  
-  console.log(props)
-  return (
-    <>
-    <p>{props.osa} {props.tehtava}</p>
-    </>
-  )
-}
-const Content = (props) => {
-  console.log(props)
-  return (
-    <>
-      <Part osa={props.course.parts[0].name} tehtava={props.course.parts[0].exercises} />
-      <Part osa={props.course.parts[1].name} tehtava={props.course.parts[1].exercises} />
-      <Part osa={props.course.parts[2].name} tehtava={props.course.parts[2].exercises} />
-    </>
-  )
-}
 
-const Total = (props) => {
-  console.log(props)
-  return (
-    <>
-      <p>
-      Number of exercises {props.course.parts[0].exercises + props.course.parts[1].exercises + props.course.parts[2].exercises}
-      </p>
-    </>
-  )
-}
+const parts = [
+  {
+    name: 'Fundamentals of React',
+    exercises: 10,
+    id: 1
+  },
+  {
+    name: 'Using props to pass data',
+    exercises: 7,
+    id: 2
+  },
+  {
+    name: 'State of a component',
+    exercises: 14,
+    id: 3
+  }
+]
 
-const App = () => {
-  const course = {
+
+
+ const header = {
     name: 'Half Stack application development',
-    id: 1,
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10,
-        id: 1
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7,
-        id: 2
-      },
-      {
-        name: 'State of a component',
-        exercises: 14,
-        id: 3
-      }
-    ]
 }
+
+const Content = () => {
+  return(
+    <div>
+  {parts.map(partData => 
+    (
+      <div key={partData.id}>
+        <p>{partData.name} {partData.exercises}</p>
+      </div>
+    )
+  )}
+  </div>
+  )
+}
+
+
+const Course = () => {
   return (
     <div>
-      {/* <Header course={course} /> */}
-      <Content course={course} />
-      {/* <Total course={course}/> */}
+      <h1>{header.name}</h1>
+      <Content />
     </div>
   )
 }
 
+const App = () => {
+ 
+  return (
+    <>
+      <Course/>
+    </>
+  )
+}
+
+
+    
+
+
 export default App
+
+
