@@ -2,7 +2,7 @@
   "name": "kurssitiedot",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/hannikagabrielsson/React-perusteet-Osa1-kurssitiedot.git",
+  "homepage": "https://github.com/hannikagabrielsson/React-perusteet-Osa2-kurssitiedot.git",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
